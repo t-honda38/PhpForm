@@ -7,6 +7,7 @@
 </head>
 <body bgcolor="#ffffe0">
 <?php
+session_start();
 $seibetu = array(0=>"男",1=>"女",2=>"不明");
 $dokode  = array(0=>"web",1=>"チラシ",2=>"知り合い");
 $catego  = array(0=>"研修について",1=>"配属について",2=>"福利厚生について");
@@ -20,37 +21,37 @@ $catego  = array(0=>"研修について",1=>"配属について",2=>"福利厚�
 <table class ="formTable" bgcolor="#F0FFF0">
     <tr>
    <label name="0" value="姓"><th>姓名</th></label>
-   <td><?php echo $_POST['name1']." ".$_POST['name2']."<br/>"; ?>
+   <td><?php echo $_SESSION["name1"]." ".$_SESSION['name2']."<br/>"; ?>
    </td>
    </tr>
 
    <tr>
    <label name="2" value="性別"><th>性別</th></label>
-   <td><?php echo $seibetu[$_POST["sei"]]."<br/>";?>
+   <td><?php echo $seibetu[$_SESSION["sei"]]."<br/>";?>
    </td>
    </tr>
 
    <tr>
    <label name="3" value="住所"><th>住所</th></label>
-   <td><?php echo $_POST['zyuu']."<br/>";?>
+   <td><?php echo $_SESSION['zyuu']."<br/>";?>
    </td>
    </tr>
 
    <tr>
    <label name="4" value="電話番号"><th>電話番号</th></label>
-   <td><?php echo $_POST['den']."-".$_POST['den2']."-".$_POST['den3']."<br/>";?>
+   <td><?php echo $_SESSION['den']."-".$_SESSION['den2']."-".$_SESSION['den3']."<br/>";?>
    </td>
    </tr>
 
    <tr>
    <label  name="5" value="メールアドレス"><th>メールアドレス</th></label>
-   <td><?php echo $_POST['mail']."@".$_POST['mail2']."<br/>";?>
+   <td><?php echo $_SESSION['mail']."@".$_SESSION['mail2']."<br/>";?>
    </td>
    </tr>
 
    <tr>
    <label name="6" value="どこで知ったか"><th>どこで知ったか</th></label>
-   <td><?php foreach ($_POST["doko"] as  $value) {
+   <td><?php foreach ($_SESSION["doko"] as  $value) {
       echo $dokode[$value]. "　";
    }?>
    </td>
@@ -58,13 +59,13 @@ $catego  = array(0=>"研修について",1=>"配属について",2=>"福利厚�
 
    <tr>
    <label name="7" value="質問カテゴリ"><th>質問カテゴリ</th></label>
-   <td><?php echo $catego[$_POST["cate"]]."<br/>";?>
+   <td><?php echo $catego[$_SESSION["cate"]]."<br/>";?>
    </td>
    </tr>
 
    <tr>
    <label name="8" value="質問内容"><th>質問内容</th></label>
-   <td><?php echo $_POST['naiyo']."<br/>";?>
+   <td><?php echo $_SESSION['naiyo']."<br/>";?>
    </td>
    </tr>
 </table>
