@@ -1,38 +1,33 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<link href="contact.css" rel="stylesheet" type="text/css">
+
 <html>
 <head>
 </head>
+<link href="contact.css" rel="stylesheet" type="text/css">
 
 <body bgcolor="#ffffe0">
-<?php
-    function check() {
-            echo $_POST['den'];
-            return false;
-    }
-?>
 
 <div id ="formWrap">
     <p align="center">
 <FONT size="7">お問い合わせ画面</FONT>
     </p>
-<form action="result.php" method="post" onsubmit="return check()">
+<form action="result.php" method="post" name="form1">
 <table class ="formTable" bgcolor="#F0FFF0">
     <tr>
-<label name="0" value="姓"><th>姓</th></label>
-<td><input type="txtbox" name="name1" value="" required><br/><br/>
+<label name="0" value="姓"><th>姓<span>「必須」</span></th></label>
+<td><input type="txtbox" name="name1" ><br/><br/>
 </td>
 </tr>
 
 <tr>
-<label name="1" value="名"><th>名</th></label>
+<label name="1" value="名"><th>名<span>「必須」</span></th></label>
 <td>
-<input type="txtbox" name="name2" value="" required><br/><br/>
+<input type="txtbox" name="name2"><br/><br/>
 </td>
 </tr>
 
 <tr>
-<label name="2" value="性別"><th>性別</th></label>
+<label name="2" value="性別"><th>性別<span>「必須」</span></th></label>
 <td>
 <input type="radio" name="sei" value="0">男
 <input type="radio" name="sei" value="1"> 女
@@ -42,14 +37,14 @@
 </tr>
 
 <tr>
-<label name="3" value="住所"><th>住所</th></label>
+<label name="3" value="住所"><th>住所<span>「必須」</span></th></label>
 <td>
 <input type="txtbox" name="zyuu" value=""><br/><br/>
 </td>
 </tr>
 
 <tr>
-<label name="4" value="電話番号"><th>電話番号</th></label>
+<label name="4" value="電話番号"><th>電話番号<span>「必須」</span></th></label>
 <td>
 <input type="txtbox" name="den" value="" size="5">-<input type="txtbox" name="den2" value="" size="5">-<input type="txtbox" name="den3" value="" size="5"><br/><br/>
 </td>
@@ -92,7 +87,7 @@
 
 </table>
 <p align="center">
-    <input type="submit" name="sousin" onclick="<?php check() ?>">
+    <input type="submit" name="sousin" onclick="return check()">
     <input type="reset" name="reset">
 </p>
 </form>

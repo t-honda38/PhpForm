@@ -1,7 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<link href="contact.css" rel="stylesheet" type="text/css">
+
 <html>
 <head>
+<link href="contact.css" rel="stylesheet" type="text/css">
+
 </head>
 <body bgcolor="#ffffe0">
 <?php
@@ -66,6 +68,9 @@ $catego  = array(0=>"研修について",1=>"配属について",2=>"福利厚�
    </td>
    </tr>
 </table>
+<p align="center">
+    <input type="button" name="back" onclick="history.back()" value = "戻る";>
+</p>
 </div>
 </body>
 </html>
