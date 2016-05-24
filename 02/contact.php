@@ -68,7 +68,7 @@
 </tr>
 
 <tr>
-<label name="7" value="質問カテゴリ"><th>質問カテゴリ</th></label>
+<label name="7" value="質問カテゴリ"><th>質問カテゴリ<span>「必須」</span></th></label>
 <td>
 <select name="cate">
 <option value="0">研修について</option>
@@ -79,7 +79,7 @@
 </tr>
 
 <tr>
-<label name="8" value="質問内容"><th>質問内容</th></label>
+<label name="8" value="質問内容"><th>質問内容<span>「必須」</span></th></label>
 <td>
 <textarea type="txtbox" name="naiyo" value="" cols="50" rows="5"></textarea><br/><br/>
 </td>
@@ -87,8 +87,8 @@
 
 </table>
 <p align="center">
-    <input type="submit" name="sousin">
-    <input type="reset" name="reset">
+    <button type="submit" name="送信">送信</button>
+    <button type="reset" name="リセット">リセット</button>
 
 </p>
 </form>

@@ -6,12 +6,32 @@
 
 </head>
 <body bgcolor="#ffffe0">
-<?php
+    <?php
+    $seibetu = array(0=>"男",1=>"女",2=>"不明");
+    $dokode  = array(0=>"web",1=>"チラシ",2=>"知り合い");
+    $catego  = array(0=>"研修について",1=>"配属について",2=>"福利厚生について");
+//この下にファイル出力
 session_start();
-$seibetu = array(0=>"男",1=>"女",2=>"不明");
-$dokode  = array(0=>"web",1=>"チラシ",2=>"知り合い");
-$catego  = array(0=>"研修について",1=>"配属について",2=>"福利厚生について");
-
+$fp = fopen("contact_log.txt", "a");
+fwrite($fp, $_SESSION["count"]."回目\n");
+fwrite($fp, "姓名 ".$_SESSION["name1"]."　");
+fwrite($fp, $_SESSION["name2"]."\n");
+fwrite($fp, "性別　".$seibetu[$_SESSION["sei"]]."\n");
+fwrite($fp, "住所　".$_SESSION["zyuu"]."\n");
+fwrite($fp, "電話番号　".$_SESSION["den"]."-");
+fwrite($fp, $_SESSION["den2"]."-");
+fwrite($fp, $_SESSION["den3"]."\n");
+fwrite($fp, "メールアドレス　".$_SESSION["mail"]."@");
+fwrite($fp, $_SESSION["mail2"]."\n");
+fwrite($fp,"どこで知ったか　");
+foreach ($_SESSION["doko"] as  $value) {
+fwrite($fp,$dokode[$value]."　");
+}
+fwrite($fp,"\n");
+fwrite($fp, "質問カテゴリ　".$catego[$_SESSION["cate"]]."\n");
+fwrite($fp, "質問内容 ".$_SESSION["naiyo"]."\n"."\n");
+fclose($fp);
+//ここまで
 ?>
 
  <div id ="formWrap">
@@ -70,7 +90,7 @@ $catego  = array(0=>"研修について",1=>"配属について",2=>"福利厚�
    </tr>
 </table>
 <p align="center">
-    <input type="button" name="back" onclick="history.back()" value = "戻る";>
+    <button type="button" name="戻る" onclick="location.href='http://localhost/PhpForm/02/contact.php'" value = "戻る";>戻る</button>
 </p>
 </div>
 </body>
