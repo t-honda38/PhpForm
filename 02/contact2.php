@@ -13,7 +13,7 @@ $flag4 = 0;
 $doko = false;
 
 
-if (preg_match("/^[一-龠]+$/u",$_POST['name1']) && preg_match("/^[一-龠]+$/u",$_POST['name2']) && is_numeric($_POST['den']) && is_numeric($_POST['den2']) && is_numeric($_POST['den3']) && preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠]+$/u",$_POST['zyuu'])){
+if (preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name1']) && preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name2']) && is_numeric($_POST['den']) && is_numeric($_POST['den2']) && is_numeric($_POST['den3']) && preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠]+$/u",$_POST['zyuu'])){
 session_start();
 $_SESSION['name1']=$_POST['name1'];
 $_SESSION['name2']=$_POST['name2'];
@@ -132,6 +132,23 @@ $flag4 =1;
 <input type="checkbox" name="doko[]" value="1" >チラシ
 <input type="checkbox" name="doko[]" value="2" >知り合い
 
+<!-- チェックボックスのチェックの値を保持（途中）
+    <?php /* foreach ($dokode as  $value => $dokodeval) {
+       $check = array_search($value, $_POST["doko"]);
+       if($check === false){
+            $chk = "";
+        }else{
+            $chk = " checked='checked' ";
+        }
+
+    ?>
+<input type="checkbox" name="doko[]" value="$value" <?/*php echo $chk ?> ><?php echo $dokodeval ?>
+
+<?php
+}
+ */?>
+ ここまで -->
+
 <br/><br/>
 </td>
 </tr>
@@ -159,8 +176,8 @@ $flag4 =1;
 
 
 <p align="center">
-    <input type="submit" name="sousin">
-    <input type="reset" name="reset">
+    <button type="submit" name="sousin">送信</button>
+    <button type="reset" name="reset">リセット</button>
 </p>
 </form>
 </div>

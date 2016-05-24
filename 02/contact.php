@@ -87,8 +87,8 @@
 
 </table>
 <p align="center">
-    <input type="submit" name="sousin">
-    <input type="reset" name="reset">
+    <button type="submit" name="送信">送信</button>
+    <button type="reset" name="リセット">リセット</button>
 
 </p>
 </form>
