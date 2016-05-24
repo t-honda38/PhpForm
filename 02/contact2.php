@@ -13,7 +13,7 @@ $flag4 = 0;
 $doko = false;
 
 
-if (preg_match("/^[一-龠]+$/u",$_POST['name1']) && preg_match("/^[一-龠]+$/u",$_POST['name2']) && is_numeric($_POST['den']) && is_numeric($_POST['den2']) && is_numeric($_POST['den3'])){
+if (preg_match("/^[一-龠]+$/u",$_POST['name1']) && preg_match("/^[一-龠]+$/u",$_POST['name2']) && is_numeric($_POST['den']) && is_numeric($_POST['den2']) && is_numeric($_POST['den3']) && preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠]+$/u",$_POST['zyuu'])){
 session_start();
 $_SESSION['name1']=$_POST['name1'];
 $_SESSION['name2']=$_POST['name2'];
@@ -27,6 +27,7 @@ $_SESSION['mail2']=$_POST['mail2'];
 $_SESSION['doko']=$_POST['doko'];
 $_SESSION['cate']=$_POST['cate'];
 $_SESSION['naiyo']=$_POST['naiyo'];
+$_SESSION['count']=$_SESSION['count']+1;
 header("Location: result.php");
 //$a = "result.php";
 }
@@ -44,9 +45,9 @@ header("Location: result.php");
 <label name="0" value="姓"><th>姓<span>「必須」</span></th></label>
 <td><input type="txtbox" name="name1" value="<?php echo $_POST["name1"]; ?>"><br/><br/>
 <?php
-if (!preg_match("/^[一-龠]+$/u",$_POST['name1'])){
+if (!preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name1'])){
 ?>
-<span>※漢字のみ入力可能</span>
+<span>※名前を入力してください</span>
 
 <?php
 $flag1 =1;
@@ -59,9 +60,9 @@ $flag1 =1;
 <label name="1" value="名"><th>名<span>「必須」</span></th></label>
 <td><input type="txtbox" name="name2" value="<?php echo $_POST["name2"]; ?>"><br/><br/>
 <?php
-if (!preg_match("/^[一-龠]+$/u",$_POST['name2'])){
+if (!preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name2'])){
 ?>
-<span>※漢字のみ入力可能</span>
+<span>※名前を入力してください</span>
 <?php
 $flag2 =1;
 }
@@ -91,6 +92,13 @@ $flag3 =1;
 <label name="3" value="住所"><th>住所<span>「必須」</span></th></label>
 <td>
 <input type="txtbox" name="zyuu" value="<?php echo $_POST["zyuu"]; ?>"><br/><br/>
+<?php
+if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠]+$/u",$_POST['zyuu'])) {
+?>
+<span>※住所を入力してください</span>
+<?php
+}
+?>
 </td>
 </tr>
 
