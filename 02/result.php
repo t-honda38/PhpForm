@@ -70,7 +70,7 @@ $catego  = array(0=>"研修について",1=>"配属について",2=>"福利厚�
    </tr>
 </table>
 <p align="center">
-    <input type="button" name="back" onclick="history.back()" value = "戻る";>
+    <input type="button" name="back" onclick="location.href='http://localhost/PhpForm/02/contact.php'" value = "戻る";>
 </p>
 </div>
 </body>

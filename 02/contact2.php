@@ -10,8 +10,8 @@ $flag1 = 0;
 $flag2 = 0;
 $flag3 = 0;
 $flag4 = 0;
+$doko = false;
 
-$a ="contact2.php";
 
 if (preg_match("/^[一-龠]+$/u",$_POST['name1']) && preg_match("/^[一-龠]+$/u",$_POST['name2']) && is_numeric($_POST['den']) && is_numeric($_POST['den2']) && is_numeric($_POST['den3'])){
 session_start();
@@ -38,11 +38,11 @@ header("Location: result.php");
     <p align="center">
 <FONT size="7">お問い合わせ画面</FONT>
     </p>
-<form action="<?php echo $a;?>" method="post" name="form1">
+<form action="contact2.php" method="post" name="form1">
 <table class ="formTable" bgcolor="#F0FFF0">
     <tr>
 <label name="0" value="姓"><th>姓<span>「必須」</span></th></label>
-<td><input type="txtbox" name="name1" ><br/><br/>
+<td><input type="txtbox" name="name1" value="<?php echo $_POST["name1"]; ?>"><br/><br/>
 <?php
 if (!preg_match("/^[一-龠]+$/u",$_POST['name1'])){
 ?>
@@ -57,8 +57,7 @@ $flag1 =1;
 
 <tr>
 <label name="1" value="名"><th>名<span>「必須」</span></th></label>
-<td>
-<input type="txtbox" name="name2"><br/><br/>
+<td><input type="txtbox" name="name2" value="<?php echo $_POST["name2"]; ?>"><br/><br/>
 <?php
 if (!preg_match("/^[一-龠]+$/u",$_POST['name2'])){
 ?>
@@ -91,14 +90,14 @@ $flag3 =1;
 <tr>
 <label name="3" value="住所"><th>住所<span>「必須」</span></th></label>
 <td>
-<input type="txtbox" name="zyuu" value=""><br/><br/>
+<input type="txtbox" name="zyuu" value="<?php echo $_POST["zyuu"]; ?>"><br/><br/>
 </td>
 </tr>
 
 <tr>
 <label name="4" value="電話番号"><th>電話番号<span>「必須」</span></th></label>
 <td>
-<input type="txtbox" name="den" value="" size="5">-<input type="txtbox" name="den2" value="" size="5">-<input type="txtbox" name="den3" value="" size="5"><br/><br/>
+<input type="txtbox" name="den" value="<?php echo $_POST["den"]; ?>" size="5">-<input type="txtbox" name="den2" value="<?php echo $_POST["den2"]; ?>" size="5">-<input type="txtbox" name="den3"  value="<?php echo $_POST["den3"]; ?>"  size="5" ><br/><br/>
 <?php
 if (!is_numeric($_POST['den']) || !is_numeric($_POST['den2']) || !is_numeric($_POST['den3'])){
 ?>
@@ -113,22 +112,24 @@ $flag4 =1;
 <tr>
 <label  name="5" value="メールアドレス"><th>メールアドレス</th></label>
 <td>
-<input type="txtbox" name="mail" value="">@<input type="txtbox" name="mail2" value=""><br/><br/>
+<input type="txtbox" name="mail" value="<?php echo $_POST["mail"]; ?>">@<input type="txtbox" name="mail2" value="<?php echo $_POST["mail2"]; ?>"><br/><br/>
 </td>
 </tr>
 
 <tr>
 <label name="6" value="どこで知ったか"><th>どこで知ったか</th></label>
 <td>
-<input type="checkbox" name="doko[]" value="0">web
-<input type="checkbox" name="doko[]" value="1">チラシ
-<input type="checkbox" name="doko[]" value="2">知り合い
+
+<input type="checkbox" name="doko[]" value="0" >web
+<input type="checkbox" name="doko[]" value="1" >チラシ
+<input type="checkbox" name="doko[]" value="2" >知り合い
+
 <br/><br/>
 </td>
 </tr>
 
 <tr>
-<label name="7" value="質問カテゴリ"><th>質問カテゴリ</th></label>
+<label name="7" value="質問カテゴリ"><th>質問カテゴリ<span>「必須」</span></th></label>
 <td>
 <select name="cate">
 <option value="0">研修について</option>
@@ -139,9 +140,9 @@ $flag4 =1;
 </tr>
 
 <tr>
-<label name="8" value="質問内容"><th>質問内容</th></label>
+<label name="8" value="質問内容"><th>質問内容<span>「必須」</span></th></label>
 <td>
-<textarea type="txtbox" name="naiyo" value="" cols="50" rows="5"></textarea><br/><br/>
+<textarea type="txtbox" name="naiyo" value=""  cols="50" rows="5"><?php echo $_POST["naiyo"]; ?></textarea><br/><br/>
 </td>
 </tr>
 
