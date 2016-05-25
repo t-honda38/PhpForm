@@ -5,7 +5,7 @@
 <link href="contact.css" rel="stylesheet" type="text/css">
 
 </head>
-<body bgcolor="#ffffe0">
+<body background="P1030280-Edit.jpg">
     <?php
     $seibetu = array(0=>"男",1=>"女",2=>"不明");
     $dokode  = array(0=>"web",1=>"チラシ",2=>"知り合い");
@@ -36,7 +36,7 @@ fclose($fp);
 
  <div id ="formWrap">
      <p align="center">
- <FONT size="7">確認画面</FONT>
+ <FONT size="7" color="#F0FFF0">確認画面</FONT>
      </p>
 <table class ="formTable" bgcolor="#F0FFF0">
     <tr>
@@ -90,7 +90,7 @@ fclose($fp);
    </tr>
 </table>
 <p align="center">
-    <button type="button" name="戻る" onclick="location.href='http://localhost/PhpForm/02/contact.php'" value = "戻る";>戻る</button>
+    <button class="button1" type="button" name="戻る" onclick="location.href='http://localhost/PhpForm/02/contact.php'" value = "戻る";>戻る</button>
 </p>
 </div>
 </body>

@@ -10,18 +10,40 @@ table.formTable{
 
 	width:90%;
 	margin:0 auto;
-	border-collapse:collapse;
+    border-collapse:collapse;
+/*追加*/
+    /*border:solid 10px red;*/
+    /*border-radius: 0.5em;*/
+    /*ここまで*/
 }
 table.formTable td,table.formTable th{
-	border:1px solid #ccc;
+	/*border:1px solid #ccc;*/ /*枠線*/
 	padding:10px;
+    /*border-radius: 0.5em;*/　　/*追加 (角を丸くする)*/
 }
+
 table.formTable th{
 	width:25%;
 	font-weight:normal;
-	background:#efefef;
+	background:#F0FFF0; /*#efefef*/  /*#F0FFF0*/
 	text-align:left;
 }
 span{
     color: #ff0000;
+}
+
+button.button1 {
+    /* 文字サイズを1.4emに指定 */
+    font-size: 1.4em;
+    /* 文字の太さをboldに指定 */
+    font-weight: bold;
+    /* 縦方向に10px、
+     * 横方向に30pxの余白を指定 */
+    padding: 10px 30px;
+
+
+}
+
+button.button8:hover {    /* 透明度を20%に指定 */
+    opacity: 0.8;
 }
