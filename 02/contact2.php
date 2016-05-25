@@ -11,7 +11,10 @@ $flag2 = 0;
 $flag3 = 0;
 $flag4 = 0;
 $doko = false;
-
+$dokode  = array(0=>"web",1=>"チラシ",2=>"知り合い");
+$chk = "";
+$chk2 = "";
+$chk3 = "";
 
 if (preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name1']) && preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name2']) && is_numeric($_POST['den']) && is_numeric($_POST['den2']) && is_numeric($_POST['den3']) && preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠]+$/u",$_POST['zyuu'])){
 session_start();
@@ -93,7 +96,7 @@ $flag3 =1;
 <td>
 <input type="txtbox" name="zyuu" value="<?php echo $_POST["zyuu"]; ?>"><br/><br/>
 <?php
-if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠]+$/u",$_POST['zyuu'])) {
+if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠!-~]+$/u",$_POST['zyuu'])) {
 ?>
 <span>※住所を入力してください</span>
 <?php
@@ -127,27 +130,31 @@ $flag4 =1;
 <tr>
 <label name="6" value="どこで知ったか"><th>どこで知ったか</th></label>
 <td>
+    <?php
+if (!empty($_POST["doko"])) {
+    foreach ($_POST["doko"] as  $value) {
 
-<input type="checkbox" name="doko[]" value="0" >web
-<input type="checkbox" name="doko[]" value="1" >チラシ
-<input type="checkbox" name="doko[]" value="2" >知り合い
-
-<!-- チェックボックスのチェックの値を保持（途中）
-    <?php /* foreach ($dokode as  $value => $dokodeval) {
-       $check = array_search($value, $_POST["doko"]);
-       if($check === false){
-            $chk = "";
-        }else{
+       $check = $value;
+       if($check == 0){
             $chk = " checked='checked' ";
+
         }
+        if($check == 1){
+             $chk2 = " checked='checked' ";
 
+         }
+         if($check == 2){
+              $chk3 = " checked='checked' ";
+
+          }
+      }
+  }
     ?>
-<input type="checkbox" name="doko[]" value="$value" <?/*php echo $chk ?> ><?php echo $dokodeval ?>
 
-<?php
-}
- */?>
- ここまで -->
+<input type="checkbox" name="doko[]" value="0" <?php echo $chk ?> >web
+<input type="checkbox" name="doko[]" value="1" <?php echo $chk2 ?> >チラシ
+<input type="checkbox" name="doko[]" value="2" <?php echo $chk3 ?> >知り合い
+
 
 <br/><br/>
 </td>
@@ -168,6 +175,12 @@ $flag4 =1;
 <label name="8" value="質問内容"><th>質問内容<span>「必須」</span></th></label>
 <td>
 <textarea type="txtbox" name="naiyo" value=""  cols="50" rows="5"><?php echo $_POST["naiyo"]; ?></textarea><br/><br/>
+<?php if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠!-~、。]+$/u",$_POST['naiyo'])){
+?>
+<span>※内容を入力してください</span>
+<?php
+}
+ ?>
 </td>
 </tr>
 
@@ -177,7 +190,6 @@ $flag4 =1;
 
 <p align="center">
     <button type="submit" name="sousin">送信</button>
-    <button type="reset" name="reset">リセット</button>
 </p>
 </form>
 </div>
