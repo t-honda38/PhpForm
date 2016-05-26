@@ -1,9 +1,9 @@
 #formWrap {
-    padding: 150px;  /*上下に*/
+    padding: 110px;  /*上下に*/
 	width:700px;
 	margin:0 auto;
 	color:#555;
-	line-height:120%;
+	line-height:150%;
 	font-size:100%;
 }
 table.formTable{
@@ -17,15 +17,15 @@ table.formTable{
     /*ここまで*/
 }
 table.formTable td,table.formTable th{
-    /*background-color:transparent;*/  /*透明*/
+    /*background-color:transparent;*/ /*透明*/
 	/*border:1px solid #ccc;*/ /*枠線*/
 	padding:10px;
     /*border-radius: 2.0em;*/　/*追加 (角を丸くする)*/
 }
 
 table.formTable th{
-	width:25%;
-	font-weight:normal;
+	width:30%;
+	font-weight:bold;
 	/*background:#F0FFF0;*/ /*#efefef*/  /*#F0FFF0*/
 	text-align:left;
 }
