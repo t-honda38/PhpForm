@@ -38,7 +38,7 @@ fclose($fp);
      <p align="center">
  <FONT size="7" color="#F0FFF0">確認画面</FONT>
      </p>
-<table class ="formTable" bgcolor="#F0FFF0">
+<table class ="formTable" bgcolor="#F0FFF0" style="border:2px solid gray;border-radius: 10px;" >
     <tr>
    <label name="0" value="姓"><th>姓名</th></label>
    <td><?php echo $_SESSION["name1"]." ".$_SESSION['name2']."<br/>"; ?>

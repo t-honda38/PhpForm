@@ -12,7 +12,8 @@
 <FONT size="7" color="#F0FFF0">お問い合わせ画面</FONT>
     </p>
 <form action="contact2.php" method="post" name="form1">
-<table  class ="formTable" bgcolor="#F0FFF0"  rules="rows"　style="border:2px solid gray;border-radius: 10px;" >
+
+<table class ="formTable" bgcolor="#F0FFF0" style="border:2px solid gray;border-radius: 10px;" >
     <tr>
 <label name="0" value="姓"><th>姓<span>「必須」</span></th></label>
 <td><input type="txtbox" name="name1" ><br/><br/>
