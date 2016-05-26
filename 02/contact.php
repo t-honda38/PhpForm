@@ -1,9 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 
 <html>
 <head>
-</head>
+<title>お問い合わせ</title>
 <link href="contact.css" rel="stylesheet" type="text/css">
+</head>
+
 
 <body background="P1030280-Edit.jpg">
 
@@ -12,7 +14,8 @@
 <FONT size="7" color="#F0FFF0">お問い合わせ画面</FONT>
     </p>
 <form action="contact2.php" method="post" name="form1">
-<table  class ="formTable" bgcolor="#F0FFF0"  rules="rows"　style="border:2px solid gray;border-radius: 10px;" >
+
+<table class ="formTable" bgcolor="#F0FFF0" style="border:2px solid gray;border-radius: 10px;" >
     <tr>
 <label name="0" value="姓"><th>姓<span>「必須」</span></th></label>
 <td><input type="txtbox" name="name1" ><br/><br/>

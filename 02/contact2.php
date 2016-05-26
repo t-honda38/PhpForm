@@ -1,9 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 
 <html>
 <head>
-</head>
+    <title>お問い合わせ画面</title>
 <link href="contact.css" rel="stylesheet" type="text/css">
+</head>
+
 
 <?php
 $flag1 = 0;
@@ -16,7 +18,7 @@ $chk = "";
 $chk2 = "";
 $chk3 = "";
 
-if (preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name1']) && preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name2']) && is_numeric($_POST['den']) && is_numeric($_POST['den2']) && is_numeric($_POST['den3']) && preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠]+$/u",$_POST['zyuu'])){
+if (preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name1']) && preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name2']) && is_numeric($_POST['den']) && is_numeric($_POST['den2']) && is_numeric($_POST['den3']) && preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠\s]+$/u",$_POST['zyuu']) && preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠!-~、。\n\s]+$/u",$_POST['naiyo'])){
 session_start();
 $_SESSION['name1']=$_POST['name1'];
 $_SESSION['name2']=$_POST['name2'];
@@ -36,14 +38,14 @@ header("Location: result.php");
 }
 ?>
 
-<body background="P1030280-Edit.jpg">
+<body background="P1030280-Edit.jpg" >
 
 <div id ="formWrap">
     <p align="center">
 <FONT size="7" color="#F0FFF0">お問い合わせ画面</FONT>
     </p>
 <form action="contact2.php" method="post" name="form1">
-<table class ="formTable" bgcolor="#F0FFF0">
+<table class ="formTable" bgcolor="#F0FFF0" style="border:2px solid gray;border-radius: 10px;">
     <tr>
 <label name="0" value="姓"><th>姓<span>「必須」</span></th></label>
 <td><input type="txtbox" name="name1" value="<?php echo $_POST["name1"]; ?>"><br/><br/>
@@ -96,7 +98,7 @@ $flag3 =1;
 <td>
 <input type="txtbox" name="zyuu" value="<?php echo $_POST["zyuu"]; ?>"><br/><br/>
 <?php
-if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠!-~]+$/u",$_POST['zyuu'])) {
+if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠!-~\s]+$/u",$_POST['zyuu'])) {
 ?>
 <span>※住所を入力してください</span>
 <?php
@@ -175,7 +177,7 @@ if (!empty($_POST["doko"])) {
 <label name="8" value="質問内容"><th>質問内容<span>「必須」</span></th></label>
 <td>
 <textarea type="txtbox" name="naiyo" value=""  cols="50" rows="5"><?php echo $_POST["naiyo"]; ?></textarea><br/><br/>
-<?php if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠!-~、。]+$/u",$_POST['naiyo'])){
+<?php if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠!-~、。\n\s]+$/u",$_POST['naiyo'])){
 ?>
 <span>※内容を入力してください</span>
 <?php

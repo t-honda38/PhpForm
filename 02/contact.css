@@ -1,33 +1,35 @@
 #formWrap {
-    padding: 150px;
+    padding: 110px;  /*上下に*/
 	width:700px;
 	margin:0 auto;
 	color:#555;
-	line-height:120%;
-	font-size:90%;
+	line-height:150%;
+	font-size:100%;
 }
 table.formTable{
-
+/*background-color:transparent;*/ /*背景を透明*/
 	width:90%;
-	margin:0 auto;
-    border-collapse:collapse;
+	margin:0 auto;　/*中心に*/
+    /*border-collapse:collapse;*\
 /*追加*/
     /*border:solid 10px red;*/
-    /*border-radius: 0.5em;*/
+    /*border-radius: 2.0em;*/
     /*ここまで*/
 }
 table.formTable td,table.formTable th{
+    /*background-color:transparent;*/ /*透明*/
 	/*border:1px solid #ccc;*/ /*枠線*/
 	padding:10px;
-    /*border-radius: 0.5em;*/　　/*追加 (角を丸くする)*/
+    /*border-radius: 2.0em;*/　/*追加 (角を丸くする)*/
 }
 
 table.formTable th{
-	width:25%;
-	font-weight:normal;
-	background:#F0FFF0; /*#efefef*/  /*#F0FFF0*/
+	width:30%;
+	font-weight:bold;
+	/*background:#F0FFF0;*/ /*#efefef*/  /*#F0FFF0*/
 	text-align:left;
 }
+
 span{
     color: #ff0000;
 }
@@ -40,10 +42,12 @@ button.button1 {
     /* 縦方向に10px、
      * 横方向に30pxの余白を指定 */
     padding: 10px 30px;
+        background: #EEE;
+        border: 1px solid #DDD;
+        /*角丸をまとめて指定する*/
+        border-radius: 20px;
 
+        color: #111;
+        width: 140px;
 
-}
-
-button.button8:hover {    /* 透明度を20%に指定 */
-    opacity: 0.8;
 }
