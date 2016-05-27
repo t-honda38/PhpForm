@@ -18,14 +18,14 @@
 <table class ="formTable" bgcolor="#F0FFF0" style="border:2px solid gray;border-radius: 10px;" >
     <tr>
 <label name="0" value="姓"><th>姓<span>「必須」</span></th></label>
-<td><input type="txtbox" name="name1" ><br/><br/>
+<td><input type="txtbox" name="name1" placeholder="情報"><br/><br/>
 </td>
 </tr>
 
 <tr>
 <label name="1" value="名"><th>名<span>「必須」</span></th></label>
 <td>
-<input type="txtbox" name="name2"><br/><br/>
+<input type="txtbox" name="name2" placeholder="太郎"><br/><br/>
 </td>
 </tr>
 
@@ -42,21 +42,21 @@
 <tr>
 <label name="3" value="住所"><th>住所<span>「必須」</span></th></label>
 <td>
-<input type="txtbox" name="zyuu" value=""><br/><br/>
+<input type="txtbox" name="zyuu" placeholder="東京都"><br/><br/>
 </td>
 </tr>
 
 <tr>
 <label name="4" value="電話番号"><th>電話番号<span>「必須」</span></th></label>
 <td>
-<input type="txtbox" name="den" value="" size="5">-<input type="txtbox" name="den2" value="" size="5">-<input type="txtbox" name="den3" value="" size="5"><br/><br/>
+<input type="txtbox" maxlength="4" name="den"  size="5" placeholder="090">-<input type="txtbox" maxlength="4" name="den2"  size="5" placeholder="1111">-<input type="txtbox" maxlength="4" name="den3" size="5" placeholder="2222"><br/><br/>
 </td>
 </tr>
 
 <tr>
 <label  name="5" value="メールアドレス"><th>メールアドレス</th></label>
 <td>
-<input type="txtbox" name="mail" value="">@<input type="txtbox" name="mail2" value=""><br/><br/>
+<input type="txtbox" name="mail" placeholder="aaaa">@<input type="txtbox" name="mail2" placeholder="ezweb.ne.jp"><br/><br/>
 </td>
 </tr>
 
@@ -84,7 +84,7 @@
 <tr>
 <label name="8" value="質問内容"><th>質問内容<span>「必須」</span></th></label>
 <td>
-<textarea type="txtbox" name="naiyo" value="" cols="50" rows="5"></textarea><br/><br/>
+<textarea type="txtbox" name="naiyo"  cols="50" rows="5" placeholder="内容入力"></textarea><br/><br/>
 </td>
 </tr>
 
