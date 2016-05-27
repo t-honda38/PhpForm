@@ -105,7 +105,7 @@ fclose($fp);
    </tr>
 </table>
 <p align="center">
-    <button class="button1" type="button" name="戻る" onclick="location.href='http://localhost/PhpForm/02/contact.php'" value = "戻る";>戻る</button>
+    <button class="button1" type="button" name="戻る" onclick="location.href='contact.php'" value = "戻る";>戻る</button>
 </p>
 </div>
 </body>

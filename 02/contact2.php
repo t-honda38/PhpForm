@@ -48,7 +48,7 @@ header("Location: result.php");
 <table class ="formTable" bgcolor="#F0FFF0" style="border:2px solid gray;border-radius: 10px;">
     <tr>
 <label name="0" value="姓"><th>姓<span>「必須」</span></th></label>
-<td><input type="txtbox" name="name1" value="<?php echo $_POST["name1"]; ?>"><br/><br/>
+<td><input type="txtbox" name="name1" value="<?php echo $_POST["name1"]; ?>"　><br/><br/>
 <?php
 if (!preg_match("/^[a-zA-Zぁ-んァ-ヶー一-龠]+$/u",$_POST['name1'])){
 ?>
@@ -110,7 +110,7 @@ if (!preg_match("/^[a-zA-Z0-9ぁ-んァ-ヶー一-龠!-~\s]+$/u",$_POST['zyuu'])
 <tr>
 <label name="4" value="電話番号"><th>電話番号<span>「必須」</span></th></label>
 <td>
-<input type="txtbox" name="den" value="<?php echo $_POST["den"]; ?>" size="5">-<input type="txtbox" name="den2" value="<?php echo $_POST["den2"]; ?>" size="5">-<input type="txtbox" name="den3"  value="<?php echo $_POST["den3"]; ?>"  size="5" ><br/><br/>
+<input type="txtbox" maxlength="4" name="den" value="<?php echo $_POST["den"]; ?>" size="5">-<input type="txtbox" maxlength="4" name="den2" value="<?php echo $_POST["den2"]; ?>" size="5">-<input type="txtbox" maxlength="4" name="den3"  value="<?php echo $_POST["den3"]; ?>"  size="5" ><br/><br/>
 <?php
 if (!is_numeric($_POST['den']) || !is_numeric($_POST['den2']) || !is_numeric($_POST['den3'])){
 ?>
